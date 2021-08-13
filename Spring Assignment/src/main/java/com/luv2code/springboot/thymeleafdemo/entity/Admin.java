@@ -1,6 +1,11 @@
 package com.luv2code.springboot.thymeleafdemo.entity;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +21,10 @@ import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name="users")
+@Getter
+@Setter
+@AllArgsConstructor
+@ToString
 public class Admin {
 
     @Id
@@ -34,52 +43,13 @@ public class Admin {
     private List<Authority> roles;
 
 
-    public Admin(String username, String password, int enabled) {
-        this.username = username;
-        this.password = password;
-        this.enabled = enabled;
-        this.roles = new ArrayList<>();
-    }
+
     public Admin() {
         this.roles = new ArrayList<>();
     }
 
-    public String getUsername() {
-        return username;
-    }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public int getEnabled() {
-        return enabled;
-    }
-
-    public void setEnabled(int enabled) {
-        this.enabled = enabled;
-    }
-
-    public List<Authority> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(List<Authority> roles) {
-        this.roles = roles;
-    }
-
-    @Override
-    public String toString() {
-        return "Admin [username=" + username + ", password=" + password + ", enabled=" + enabled +"]";
-    }
 
 
 
